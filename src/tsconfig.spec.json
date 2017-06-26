@@ -7,7 +7,9 @@
     "baseUrl": "",
     "types": [
       "jasmine",
-      "node"
+      "node",
+      "@types/webassembly-js-api",
+      "@types/webpack"
     ]
   },
   "files": [

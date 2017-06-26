@@ -8,7 +8,10 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "clean-build": "rm -rf build && mkdir build",
+    "build-wasm": "emcc src/c/main.c -Os -s WASM=1 -s BINARYEN_ASYNC_COMPILATION=0 -s SIDE_MODULE=1 -s \"BINARYEN_METHOD='native-wasm'\" -o build/main.wasm",
+    "wasm": "npm run clean-build && npm run build-wasm"
   },
   "private": true,
   "dependencies": {
@@ -21,8 +24,11 @@
     "@angular/platform-browser": "^4.0.0",
     "@angular/platform-browser-dynamic": "^4.0.0",
     "@angular/router": "^4.0.0",
+    "@types/webassembly-js-api": "0.0.1",
+    "@types/webpack": "^2.2.16",
     "core-js": "^2.4.1",
     "rxjs": "^5.1.0",
+    "wasm-loader": "^1.0.0",
     "zone.js": "^0.8.4"
   },
   "devDependencies": {

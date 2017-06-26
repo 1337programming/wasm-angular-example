@@ -1,0 +1,8 @@
+<h1>WebAssembly + NG Example - Drawing Circles</h1>
+<input [(ngModel)]="numCircles" type="text" placeholder="Number of Circles" />
+<input [(ngModel)]="radius" type="text" placeholder="Radius" />
+<br>
+<br>
+<button (click)="drawCircles()">Draw Circles</button>
+<hr>
+<canvas #canvas [width]="canvasWidth" [height]="canvasHeight"></canvas>
